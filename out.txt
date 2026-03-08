@@ -1,0 +1,18 @@
+[33mYou are using Node.js 22.8.0. Vite requires Node.js version 20.19+ or 22.12+. Please upgrade your Node.js version.[39m
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 3 modules transformed.
+[31m✗[39m Build failed in 71ms
+[31merror during build:
+[31m[@tailwindcss/vite:generate:build] Can't resolve 'tailwindcss' in 'D:\project\Mar2026PersonalPortfolio\src'[31m
+file: [36mD:/project/Mar2026PersonalPortfolio/src/index.css[31m
+    at finishWithoutResolve (D:\project\Mar2026PersonalPortfolio\node_modules\enhanced-resolve\lib\Resolver.js:586:18)
+    at D:\project\Mar2026PersonalPortfolio\node_modules\enhanced-resolve\lib\Resolver.js:678:14
+    at D:\project\Mar2026PersonalPortfolio\node_modules\enhanced-resolve\lib\Resolver.js:739:5
+    at eval (eval at create (D:\project\Mar2026PersonalPortfolio\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at D:\project\Mar2026PersonalPortfolio\node_modules\enhanced-resolve\lib\Resolver.js:739:5
+    at eval (eval at create (D:\project\Mar2026PersonalPortfolio\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:27:1)
+    at D:\project\Mar2026PersonalPortfolio\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
+    at D:\project\Mar2026PersonalPortfolio\node_modules\enhanced-resolve\lib\Resolver.js:739:5
+    at eval (eval at create (D:\project\Mar2026PersonalPortfolio\node_modules\tapable\lib\HookCodeFactory.js:31:10), <anonymous>:15:1)
+    at D:\project\Mar2026PersonalPortfolio\node_modules\enhanced-resolve\lib\Resolver.js:739:5[39m
