@@ -9,7 +9,7 @@ import { Canvas } from "@react-three/fiber";
 // OrbitControls = Drei camera helper: drag to orbit, scroll to zoom, right-drag to pan.
 // ambientLight / directionalLight below are R3F wrappers around THREE lights (no extra import needed —
 // R3F maps lowercase JSX tags like <ambientLight /> to new THREE.AmbientLight()).
-import { OrbitControls } from "@react-three/drei";
+// import { OrbitControls } from "@react-three/drei";
 
 import BabyFox from "../3d/BabyFox";
 import FloatingParticles from "../3d/FloatingParticles";

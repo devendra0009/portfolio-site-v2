@@ -87,7 +87,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="order-1 lg:order-2 flex justify-center lg:justify-center relative"
+          className="order-1 lg:order-2 flex justify-center lg:justify-end relative"
         >
           <div
             className="relative w-44 h-56 sm:w-52 sm:h-64 md:w-60 md:h-72 lg:w-64 lg:h-80 rounded mt-8 lg:mt-0 group cursor-pointer"

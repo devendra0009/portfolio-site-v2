@@ -1,7 +1,7 @@
 // useGLTF = Drei helper that loads a .glb/.gltf file into a Three.js scene graph.
 // Under the hood it uses THREE.GLTFLoader + Suspense (so the parent must wrap us in <Suspense>).
 import { useGLTF } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
