@@ -1,7 +1,43 @@
 import { Section } from "./Section";
 import { Folder, ExternalLink, Github } from "lucide-react";
 
-const PROJECTS = [
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  github: string;
+  live: string;
+  featured?: boolean;
+  highlights?: string[];
+};
+
+const PROJECTS: Project[] = [
+  {
+    title: "CaliTrack",
+    featured: true,
+    description:
+      "Calisthenics skill-progression assistant — React, TypeScript, Spring Boot, PostgreSQL, Firebase, RabbitMQ, AWS S3/Cloudinary, Spring AI · 2026",
+    highlights: [
+      "Built a Spring Boot-powered roadmap assistant that guides users through calisthenics skill progression using a dependency graph, adaptive placement, and video-verified unlocks.",
+      "Implemented Firebase Auth with Spring Security (token verification, hashed refresh sessions, soft-delete with provider revoke) and role-based admin APIs for catalog management.",
+      "Designed reliable async plan progression using an outbox pattern with RabbitMQ, ensuring consistent side effects under retries while keeping workout completion fast.",
+      "Added direct-to-cloud media uploads (Cloudinary/S3/local) and a timezone-aware activity calendar for accurate daily tracking.",
+      "Delivered a React/TypeScript frontend with TanStack Query, Zod validation, light/dark mode, and an AI coach (OpenRouter/Gemma); ensured reliability with automated tests, Docker + GitHub Actions CI/CD, and Prometheus/Grafana monitoring with alerting.",
+    ],
+    tech: [
+      "React",
+      "TypeScript",
+      "Spring Boot",
+      "PostgreSQL",
+      "Firebase",
+      "RabbitMQ",
+      "AWS S3",
+      "Cloudinary",
+      "Spring AI",
+    ],
+    github: "https://github.com/devendra0009/calistrack",
+    live: "https://devendra0009.github.io/calistrack/login",
+  },
   {
     title: "Buzzer",
     description: "A scalable social media platform supporting user profiles, posts, and feeds. Features real-time chatting using WebSockets and audio/video calling via WebRTC.",
@@ -82,7 +118,7 @@ export function Projects() {
           {PROJECTS.map((project, index) => (
             <div 
               key={index} 
-              className="group h-full flex flex-col justify-between p-6 sm:p-8 bg-[#050505] border border-borderDark rounded hover:-translate-y-2 hover:border-accent-amber transition-all duration-300"
+              className={`group h-full flex flex-col justify-between p-6 sm:p-8 bg-[#050505] border border-borderDark rounded hover:-translate-y-2 hover:border-accent-amber transition-all duration-300 ${project.featured ? "md:col-span-2" : ""}`}
             >
               <div>
                 <div className="flex justify-between items-center mb-6">
@@ -105,9 +141,17 @@ export function Projects() {
                   {project.title}
                 </h3>
                 
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  {project.description}
-                </p>
+                {project.highlights ? (
+                  <ul className="text-gray-400 text-sm leading-relaxed mb-6 space-y-2 list-disc pl-5">
+                    {project.highlights.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                    {project.description}
+                  </p>
+                )}
               </div>
               
               <div className="flex flex-wrap gap-3 mt-auto pt-4">

@@ -11,6 +11,7 @@ import { Footer } from "./components/Footer";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
+import BabyFoxScene from "./components/scene/My3DBgScene";
 
 function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -28,37 +29,42 @@ function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <div className="bg-dark min-h-screen text-light font-sans selection:bg-accent-amber/30 selection:text-white pb-safe">
-      <Navbar />
-      
-      <main className="flex flex-col w-full text-left max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 pb-12">
-        <Hero />
-        <About />
-        <Experience />
-        <Education />
-        <TechStack />
-        <Projects />
-        <Hobbies />
-        <Contact />
-      </main>
+    <div className="relative  isolate">
+      <div className="fixed inset-0 z-0  pointer-events-none">
+        {/* BabyFoxScene owns the <Canvas>; drag to orbit the fox */}
+        <BabyFoxScene />
+      </div>
+      <div className="relative z-10  min-h-screen text-light font-sans selection:bg-accent-amber/30 selection:text-white pb-safe">
+        <Navbar />
 
-      <Footer />
+        <main className="flex flex-col w-full text-left max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 pb-12 ">
+          <Hero />
+          <About />
+          <Experience />
+          <Education />
+          <TechStack />
+          <Projects />
+          <Hobbies />
+          <Contact />
+        </main>
 
-      {/* Floating Back to Top Button */}
-      <AnimatePresence>
-        {showScrollTop && (
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            onClick={scrollToTop}
-            className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-dark border border-borderDark text-gray-400 hover:text-accent-amber hover:border-accent-amber transition-colors shadow-lg group"
-            aria-label="Scroll to top"
-          >
-            <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
-          </motion.button>
-        )}
-      </AnimatePresence>
+        <Footer />
+        {/* Floating Back to Top Button */}
+        <AnimatePresence>
+          {showScrollTop && (
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              onClick={scrollToTop}
+              className="fixed bottom-8 right-8 z-50 p-3 rounded-full bg-dark border border-borderDark text-gray-400 hover:text-accent-amber hover:border-accent-amber transition-colors shadow-lg group"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp className="w-5 h-5 group-hover:-translate-y-1 transition-transform" />
+            </motion.button>
+          )}
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

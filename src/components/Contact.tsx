@@ -33,18 +33,6 @@ export function Contact() {
             </a>
           ))}
         </div>
-
-        <div className="flex justify-center md:justify-start">
-          <a
-            href="https://drive.google.com/file/d/1basSGPkMjf013xUjIcLaUOWM-ZK1sOFk/view?usp=sharing"
-            target="_blank"
-            className="px-8 py-4 bg-accent-amber/10 border border-accent-amber text-accent-amber hover:bg-accent-amber hover:text-dark transition-all duration-300 font-mono text-sm relative group overflow-hidden"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              watch_resume()
-            </span>
-          </a>
-        </div>
       </div>
     </Section>
   );
